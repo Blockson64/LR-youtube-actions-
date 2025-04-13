@@ -31,12 +31,13 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Commit and push
+      - name: Commit and push updated video list
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add log.txt
-          git commit -m "Update log.txt [bot]" || echo "No changes to commit"
-          git push origin HEAD:${{ github.ref }}
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add videos.txt
+          git commit -m "Update video list"
+          git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
